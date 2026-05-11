@@ -2,10 +2,60 @@
 <html>
   <head>
     <title>Sample</title>
+    <style>
+      table, th, td{border: 2px solid black;}
+    </style>
   </head>
 
   <body>
-    Hello World!
+    <div style="display:flex;justify-content:center;"> 
+      <div style="left:100;">
+        <table>
+      <tr>
+        <th>Enroll no.</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Grade</th>
+      </tr>
+      <tr>
+        <th>200001</th>
+        <th>John Smith</th>
+        <th>B.Tech.(I.T.)</th>
+        <th>9.0</th>
+      </tr>
+      <tr>
+        <th>200002</th>
+        <th>Jane Doe</th>
+        <th>B.Tech.(I.T.)</th>
+        <th>8.7</th>
+      </tr>
+      <tr>
+        <th>200003</th>
+        <th>Johnathan Sims</th>
+        <th>B.Tech.(I.T.)</th>
+        <th>9.4</th>
+      </tr>
+      <tr>
+        <th>200004</th>
+        <th>John Baker</th>
+        <th>B.Tech.(I.T.)</th>
+        <th>8.2</th>
+      </tr>
+      </div>
+      <div>
+      <form><h3>
+        <div>Enrollment number:<br>
+        <input type="number" name="enroll"><br></div>
+        <div>Name:<br>
+        <input type="text" name="name"><br></div>
+        <div>Branch:<br>
+        <input type="text" name="branch"><br></div>
+        <div>Grade:<br>
+        <input type="number" name="grade"><br></div>
+        <div><br><button type="submit">Add</button><br><br><br></div>
+      </h3></form>
+      </div>
+      </div>
   </body>
 </html>
 
