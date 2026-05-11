@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <meta charset="UTF-8">
+    <title>My Python GitHub Page</title>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
   </head>
   <body>
     <h1>My Python GitHub Page</h1>
+    <p>Below is the output of our Python script:</p>
     
-    <!-- Your Python code goes inside this tag -->
-    <py-script>
-        print("Hello, world! This is Python running on GitHub Pages.")
+    <script type="py" terminal>
+        print("Hello, world! This is Python running natively in the browser.")
         
-        # You can even do math or logic
         for i in range(5):
             print(f"Number {i}")
-    </py-script>
+    </script>
   </body>
 </html>
