@@ -4,16 +4,97 @@
 <head>
     <title>Sample</title>
     <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            display: grid;
+            grid-template: auto 2fr auto / 1fr 2fr 1fr;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        footer,
+        main,
+        .left-sidebar,
+        .right-sidebar {
+            padding: 10px;
+        }
+
+        header {
+            background-color: #999;
+            display: grid;
+            grid-template-columns: auto auto 1fr;
+            gap:30px;
+            grid-column: 1 / 4;
+            grid-row: 1;
+        }
+
+        footer{
+            background-color: #999;
+            grid-column: 1/4;
+        }
+
+        .left-sidebar{
+            grid-column: 1/2;
+        }
+
+        main{
+            grid-column: 2/3;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-sidebar{
+            grid-column: 3/4;
+        }
+
         table,
         th,
         td {
             border: 2px solid black;
         }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4b5563;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]),
+        textarea {
+            padding: 10px;
+        }
     </style>
 </head>
 
 <body>
-    <div style="display:flex;justify-content:center;align-items:center;">
+    <header>
+        <div>
+            <h2>Home</h2>
+        </div>
+        <div>
+            <h2>Log-in</h2>
+        </div>
+    </header>
+    <div class="left-sidebar">
+        bleh
+    </div>
+    <main>
+        <div>
             <table>
                 <tr>
                     <th>Enroll no.</th>
@@ -47,61 +128,97 @@
                 </tr>
             </table>
         </div>
-        <div>
-            <form>
-                <h3>
-                    <div>Enrollment number:<br>
-                        <input required type="number" name="enroll"><br>
-                    </div>
-                    <div>Name:<br>
-                        <input required type="text" name="name"><br>
-                    </div>
-                    <div>Branch:<br>
-                        <input required type="text" name="branch"><br>
-                    </div>
-                    <div>Grade:<br>
-                        <input required type="number" step="0.01" name="grade"><br>
-                    </div>
-                    <div>Email:<br>
-                        <input required type="email" name="studentEmail"><br>
-                    </div>
-                    <div>Phone number:<br>
-                        <input required type="tel" name="phoneNumber"><br>
-                    </div>
-                    <div>Birtddate:<br>
-                        <input required type="date" name="birtddate"><br>
-                    </div>
-                    <div>Passed:<br>
-                        <input required type="radio" id="passTrue" name="pass">
-                        <label for="passTrue">True</label><br>
-                        <input required type="radio" id="passFalse" name="pass">
-                        <label for="passFalse">False</label>
-                    </div>
-                    <div>Group:<br>
-                        <input required type="color" name="groupColor"><br>
-                    </div>
-                    <div>Passport photo:<br>
-                        <input required type="file" name="photo"><br>
-                    </div>
-                    <div>Submiter Email:<br>
-                        <input required type="email" name="studentEmail"><br>
-                    </div>
-                    <div>Password:<br>
-                        <input required type="password" name="password"><br>
-                    </div>
-                    <div>Final comments:<br>
-                        <textarea name="submitorCommets"></textarea>
-                    </div>
-                    <div>Everything is correct:
-                        <input type="checkbox" name="final">
-                    </div>
-                    <div><br>
-                        <input required type="submit" value="Submit"><br>
-                    </div>
-                </h3>
-            </form>
-        </div>
+
+
+    </main>
+    <div class="right-sidebar">
+        <form action="#" method="POST">
+            <div>
+                <label for="enroll">Enrollment number:</label><br>
+                <input required type="number" id="enroll" name="enroll">
+            </div>
+
+            <div>
+                <label for="name">Name:</label><br>
+                <input required type="text" id="name" name="name">
+            </div>
+
+            <div>
+                <label for="branch">Branch:</label><br>
+                <input required type="text" id="branch" name="branch">
+            </div>
+
+            <div>
+                <label for="grade">Grade:</label><br>
+                <input required type="number" step="0.01" id="grade" name="grade">
+            </div>
+
+            <div>
+                <label for="studentEmail">Email:</label><br>
+                <input required type="email" id="studentEmail" name="studentEmail">
+            </div>
+
+            <div>
+                <label for="phoneNumber">Phone number:</label><br>
+                <input required type="tel" id="phoneNumber" name="phoneNumber">
+            </div>
+
+            <div>
+                <label for="birthdate">Birthdate:</label><br>
+                <input required type="date" id="birthdate" name="birthdate">
+            </div>
+
+            <div>
+                <span>Passed:</span>
+                <input required type="radio" id="passTrue" name="pass" value="true">
+                <label for="passTrue">True</label><br>
+
+                <input required type="radio" id="passFalse" name="pass" value="false">
+                <label for="passFalse">False</label><br>
+            </div>
+
+            <div>
+                <label for="groupColor">Group:</label><br>
+                <input required type="color" id="groupColor" name="groupColor">
+            </div>
+
+            <div>
+                <label for="photo">Passport photo:</label><br>
+                <input required type="file" id="photo" name="photo">
+            </div>
+
+            <div>
+                <label for="submitterEmail">Submitter Email:</label><br>
+                <input required type="email" id="submitterEmail" name="submitterEmail">
+            </div>
+
+            <div>
+                <label for="password">Password:</label><br>
+                <input required type="password" id="password" name="password">
+            </div>
+
+            <div>
+                <label for="submitterComments">Final comments:</label><br>
+                <textarea id="submitterComments" name="submitterComments"></textarea>
+            </div>
+
+            <div>
+                <input type="checkbox" id="final" name="final">
+                <label for="final">Everything is correct</label><br>
+            </div>
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
+
+    <footer>
+        Footer content. <br>
+        Footer content. <br>
+        Footer content. <br>
+        Footer content. <br>        
+    </footer>
 </body>
 
 </html>
