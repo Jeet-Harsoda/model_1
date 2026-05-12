@@ -1,61 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Sample</title>
     <style>
-      table, th, td{border: 2px solid black;}
+        table,
+        th,
+        td {
+            border: 2px solid black;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <div style="display:flex;justify-content:center;"> 
-      <div style="left:100;">
-        <table>
-      <tr>
-        <th>Enroll no.</th>
-        <th>Name</th>
-        <th>Branch</th>
-        <th>Grade</th>
-      </tr>
-      <tr>
-        <th>200001</th>
-        <th>John Smith</th>
-        <th>B.Tech.(I.T.)</th>
-        <th>9.0</th>
-      </tr>
-      <tr>
-        <th>200002</th>
-        <th>Jane Doe</th>
-        <th>B.Tech.(I.T.)</th>
-        <th>8.7</th>
-      </tr>
-      <tr>
-        <th>200003</th>
-        <th>Johnathan Sims</th>
-        <th>B.Tech.(I.T.)</th>
-        <th>9.4</th>
-      </tr>
-      <tr>
-        <th>200004</th>
-        <th>John Baker</th>
-        <th>B.Tech.(I.T.)</th>
-        <th>8.2</th>
-      </tr>
-      </div>
-      <div>
-      <form><h3>
-        <div>Enrollment number:<br>
-        <input type="number" name="enroll"><br></div>
-        <div>Name:<br>
-        <input type="text" name="name"><br></div>
-        <div>Branch:<br>
-        <input type="text" name="branch"><br></div>
-        <div>Grade:<br>
-        <input type="number" step="0.01" name="grade"><br></div>
-        <div><br><button type="submit">Add</button><br><br><br></div>
-      </h3></form>
-      </div>
-      </div>
-  </body>
+<body>
+    <div style="display:flex;justify-content:center;align-items:center;">
+            <table>
+                <tr>
+                    <th>Enroll no.</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td>200001</td>
+                    <td>John Smitd</td>
+                    <td>B.Tech.(I.T.)</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <td>200002</td>
+                    <td>Jane Doe</td>
+                    <td>B.Tech.(I.T.)</td>
+                    <td>8.7</td>
+                </tr>
+                <tr>
+                    <td>200003</td>
+                    <td>Johnatdan Sims</td>
+                    <td>B.Tech.(I.T.)</td>
+                    <td>9.4</td>
+                </tr>
+                <tr>
+                    <td>200004</td>
+                    <td>John Baker</td>
+                    <td>B.Tech.(I.T.)</td>
+                    <td>8.2</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <form>
+                <h3>
+                    <div>Enrollment number:<br>
+                        <input required type="number" name="enroll"><br>
+                    </div>
+                    <div>Name:<br>
+                        <input required type="text" name="name"><br>
+                    </div>
+                    <div>Branch:<br>
+                        <input required type="text" name="branch"><br>
+                    </div>
+                    <div>Grade:<br>
+                        <input required type="number" step="0.01" name="grade"><br>
+                    </div>
+                    <div>Email:<br>
+                        <input required type="email" name="studentEmail"><br>
+                    </div>
+                    <div>Phone number:<br>
+                        <input required type="tel" name="phoneNumber"><br>
+                    </div>
+                    <div>Birtddate:<br>
+                        <input required type="date" name="birtddate"><br>
+                    </div>
+                    <div>Passed:<br>
+                        <input required type="radio" id="passTrue" name="pass">
+                        <label for="passTrue">True</label><br>
+                        <input required type="radio" id="passFalse" name="pass">
+                        <label for="passFalse">False</label>
+                    </div>
+                    <div>Group:<br>
+                        <input required type="color" name="groupColor"><br>
+                    </div>
+                    <div>Passport photo:<br>
+                        <input required type="file" name="photo"><br>
+                    </div>
+                    <div>Submiter Email:<br>
+                        <input required type="email" name="studentEmail"><br>
+                    </div>
+                    <div>Password:<br>
+                        <input required type="password" name="password"><br>
+                    </div>
+                    <div>Final comments:<br>
+                        <textarea name="submitorCommets"></textarea>
+                    </div>
+                    <div>Everything is correct:
+                        <input type="checkbox" name="final">
+                    </div>
+                    <div><br>
+                        <input required type="submit" value="Submit"><br>
+                    </div>
+                </h3>
+            </form>
+        </div>
+    </div>
+</body>
+
 </html>
-
