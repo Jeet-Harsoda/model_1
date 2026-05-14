@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample</title>
     <style>
         :root {
@@ -45,22 +46,28 @@
 
         .left-sidebar{
             grid-column: 1/2;
+            font-size: 2em;
+            background-color: #9bc;
+            border-radius: 1px;
         }
 
         main{
             grid-column: 2/3;
-            justify-content: center;
+            justify-content: right;
             align-items: center;
         }
 
         .right-sidebar{
             grid-column: 3/4;
+            background-color: #9bc;
+            border-radius: 1px;
         }
 
         table,
         th,
         td {
             border: 2px solid black;
+            border-radius: 5px;
         }
 
         label {
@@ -74,7 +81,7 @@
             flex-direction: column;
         }
 
-        input:not([type="radio"]):not([type="checkbox"]),
+        input:not([type="radio"]):not([type="checkbox"]):not([type="color"]),
         textarea {
             padding: 10px;
         }
@@ -90,9 +97,25 @@
             <h2>Log-in</h2>
         </div>
     </header>
+
     <div class="left-sidebar">
-        bleh
+        <nav>
+        <a href="svg_example.html">SVG example</a> <br>
+        <a href="table_ir.html">Irregular table</a> <br>
+        <a href="music_browser.html">Irregular table</a> <br>
+        Nav content. <br>
+        Nav content. <br>
+        Nav content. <br>
+        Nav content. <br>
+        Nav content. <br>
+        Nav content. <br>
+        Nav content. <br>
+        Nav content. <br>
+        Nav content. <br>
+        Nav content. <br>
+        </nav>
     </div>
+
     <main>
         <div>
             <table>
@@ -104,7 +127,7 @@
                 </tr>
                 <tr>
                     <td>200001</td>
-                    <td>John Smitd</td>
+                    <td>John Smith</td>
                     <td>B.Tech.(I.T.)</td>
                     <td>9.0</td>
                 </tr>
@@ -127,6 +150,10 @@
                     <td>8.2</td>
                 </tr>
             </table>
+            <audio src="dogbird.mp3" type="audio/mpeg" autopaly="true">
+                <source src="dogbird.mp3" type="mpeg">
+            </audio>
+            <video src="dogbird.mp3"></video>
         </div>
 
 
@@ -169,7 +196,7 @@
             </div>
 
             <div>
-                <span>Passed:</span>
+                <span>Passed:</span><br>
                 <input required type="radio" id="passTrue" name="pass" value="true">
                 <label for="passTrue">True</label><br>
 
@@ -212,12 +239,10 @@
             </div>
         </form>
     </div>
-
     <footer>
         Footer content. <br>
         Footer content. <br>
-        Footer content. <br>
-        Footer content. <br>        
+        Footer content. <br>      
     </footer>
 </body>
 
