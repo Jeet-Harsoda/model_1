@@ -3,20 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoster</title>
-    <script src="js/jquery-4.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <title>Hoster | Premium Web Hosting</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div id="header"></div>
+
+    <div id="header-placeholder"></div>
+
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="badge bg-white text-primary mb-3 px-3 py-2 rounded-pill fw-bold">SUMMER SALE - UP TO 75% OFF</span>
+                    <h1 class="display-3 fw-bold mb-4">Everything You Need to Create a Website</h1>
+                    <p class="lead mb-5">Up to 75% off Hosting + Free Domain + Free Website Builder.</p>
+                    
+                    <div class="d-flex justify-content-center gap-3 mb-5">
+                        <a href="services.html" class="btn btn-light btn-lg text-primary fw-bold px-5 py-3 rounded-pill">Get Started</a>
+                        <a href="services.html" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill border-2">View Plans</a>
+                    </div>
+                    
+                    <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap mt-4 text-white-50">
+                        <span><i class="fas fa-check text-success me-2"></i>Free SSL</span>
+                        <span><i class="fas fa-check text-success me-2"></i>Free Domain</span>
+                        <span><i class="fas fa-check text-success me-2"></i>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light-purple">
+        <div class="container">
+            <div class="section-title mb-4">
+                <h2 class="fs-1">Find the Perfect Domain Name</h2>
+                <p>Enter your domain name and choose the extension that fits you best.</p>
+            </div>
+            
+            <div class="domain-search-box">
+                <input type="text" id="domainInput" placeholder="Search for your perfect domain name (e.g. mywebsite.com)">
+                <button type="button" id="searchDomainBtn" class="btn btn-primary px-4 fw-bold">Search</button>
+            </div>
+            
+            <div class="d-flex justify-content-center gap-4 mt-4 flex-wrap">
+                <div class="text-center">
+                    <strong class="fs-5 text-dark">.com</strong>
+                    <div class="text-primary fw-bold">$4.99/yr</div>
+                </div>
+                <div class="text-center">
+                    <strong class="fs-5 text-dark">.net</strong>
+                    <div class="text-primary fw-bold">$7.99/yr</div>
+                </div>
+                <div class="text-center">
+                    <strong class="fs-5 text-dark">.org</strong>
+                    <div class="text-primary fw-bold">$9.99/yr</div>
+                </div>
+                <div class="text-center">
+                    <strong class="fs-5 text-dark">.io</strong>
+                    <div class="text-primary fw-bold">$29.99/yr</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Hosting Services</h2>
+                <p>Choose the perfect hosting plan for your needs.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <i class="fas fa-server fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Web Hosting</h3>
+                            <p class="card-text text-muted mb-4">Perfect for small to medium websites and blogs.</p>
+                            <h4 class="text-primary mb-4">From $2.99/mo</h4>
+                            <a href="services.html" class="btn btn-outline-primary w-100">See Plans</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm text-center" style="border: 2px solid var(--primary-color) !important;">
+                        <span class="badge bg-primary position-absolute top-0 start-50 translate-middle py-2 px-3 rounded-pill">MOST POPULAR</span>
+                        <div class="card-body">
+                            <div class="mb-4 mt-2">
+                                <i class="fas fa-cloud fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Cloud Hosting</h3>
+                            <p class="card-text text-muted mb-4">For large scale projects that need high performance.</p>
+                            <h4 class="text-primary mb-4">From $9.99/mo</h4>
+                            <a href="services.html" class="btn btn-primary w-100">See Plans</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <i class="fas fa-microchip fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">VPS Hosting</h3>
+                            <p class="card-text text-muted mb-4">Dedicated resources to scale your big project.</p>
+                            <h4 class="text-primary mb-4">From $5.99/mo</h4>
+                            <a href="services.html" class="btn btn-outline-primary w-100">See Plans</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 pe-lg-5 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4">Lightning Fast Web Hosting</h2>
+                    <p class="lead text-muted mb-4">We use state-of-the-art server hardware, NVMe storage, and advanced caching to make your website fly.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success fs-5 me-3"></i> 99.9% Uptime Guarantee</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success fs-5 me-3"></i> Free SSL Certificate</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success fs-5 me-3"></i> Weekly Backups</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success fs-5 me-3"></i> 30-Day Money-Back Guarantee</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-primary mt-3">Learn More About Us</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Server Infrastructure" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-    <div id="footer"></div>
-    <script>
-        $(document).ready(function() {
-        $("#header").load("header.html")
-        $("#footer").load("footer.html");
-    });
-    </script>   
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
