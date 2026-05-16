@@ -11,16 +11,14 @@
 </head>
 <body class="bg-light">
 
-    <!-- Header Placeholder -->
+
     <div id="header-placeholder"></div>
 
     <div class="container section-padding">
         <h1 class="h2 fw-bold mb-4">You're almost there! Complete your order</h1>
         
         <div class="row g-4">
-            <!-- Left Column: Cart Items -->
             <div class="col-lg-8">
-                <!-- Item 1 -->
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-start mb-3">
@@ -28,33 +26,32 @@
                                 <h3 class="h5 fw-bold mb-1">Premium Web Hosting</h3>
                                 <p class="text-muted small mb-0">Includes Free SSL & Free Domain</p>
                             </div>
-                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                            <button class="btn btn-sm btn-outline-danger delete-item" data-tier="premium"><i class="fas fa-trash-alt"></i></button>
                         </div>
-                        
-                        <!-- Period Selection -->
+
                         <div class="row g-3 mt-2">
                             <div class="col-md-3 col-6">
-                                <div class="border rounded p-3 text-center cursor-pointer">
+                                <div class="border rounded p-3 text-center cursor-pointer plan-selector" data-tier="premium" data-duration="1">
                                     <div class="fw-bold mb-1">1 Month</div>
                                     <div class="fs-5">$11.99<span class="fs-6 text-muted">/mo</span></div>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6">
-                                <div class="border rounded p-3 text-center cursor-pointer border-primary bg-primary bg-opacity-10 position-relative">
+                                <div class="border rounded p-3 text-center cursor-pointer border-primary bg-primary bg-opacity-10 position-relative plan-selector" data-tier="premium" data-duration="12">
                                     <span class="position-absolute top-0 start-50 translate-middle badge bg-success">Save 75%</span>
                                     <div class="fw-bold mb-1 mt-2">12 Months</div>
                                     <div class="fs-5">$2.99<span class="fs-6 text-muted">/mo</span></div>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6">
-                                <div class="border rounded p-3 text-center cursor-pointer">
+                                <div class="border rounded p-3 text-center cursor-pointer plan-selector" data-tier="premium" data-duration="24">
                                     <span class="position-absolute top-0 start-50 translate-middle badge bg-success d-none">Save 75%</span>
                                     <div class="fw-bold mb-1">24 Months</div>
                                     <div class="fs-5">$2.49<span class="fs-6 text-muted">/mo</span></div>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6">
-                                <div class="border rounded p-3 text-center cursor-pointer">
+                                <div class="border rounded p-3 text-center cursor-pointer plan-selector" data-tier="premium" data-duration="48">
                                     <div class="fw-bold mb-1">48 Months</div>
                                     <div class="fs-5">$1.99<span class="fs-6 text-muted">/mo</span></div>
                                 </div>
@@ -63,7 +60,6 @@
                     </div>
                 </div>
 
-                <!-- Domain Search inside Cart -->
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-4">
                         <h4 class="h6 fw-bold mb-3"><i class="fas fa-gift text-primary me-2"></i> Eligible for a Free Domain!</h4>
@@ -79,8 +75,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Right Column: Order Summary -->
+
             <div class="col-lg-4">
                 <div class="card border-0 shadow-sm sticky-top" style="top: 100px;">
                     <div class="card-body p-4">
@@ -88,11 +83,11 @@
                         
                         <div class="d-flex justify-content-between mb-2">
                             <span class="text-muted">Premium Web Hosting (12 Months)</span>
-                            <span>$143.88</span>
+                            <span id="summary-base-price">$143.88</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2 text-success">
-                            <span>Discount -75%</span>
-                            <span>-$107.91</span>
+                            <span id="summary-discount">Discount -75%</span>
+                            <span id="summary-discount-amount">-$107.91</span>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
                             <span class="text-muted">Domain Registration</span>
@@ -103,7 +98,7 @@
                         
                         <div class="d-flex justify-content-between mb-4 align-items-center">
                             <span class="fw-bold fs-5">Total</span>
-                            <span class="fw-bold fs-3 text-primary">$35.88</span>
+                            <span class="fw-bold fs-3 text-primary" id="summary-total">$35.88</span>
                         </div>
                         
                         <div class="mb-4">
@@ -125,7 +120,6 @@
         </div>
     </div>
 
-    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
