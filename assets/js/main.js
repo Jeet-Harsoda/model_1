@@ -98,4 +98,12 @@ $(document).ready(function () {
         $('#summary-discount-amount').text("-$" + (0).toFixed(2));
         $('#summary-total').text("$" + (0).toFixed(2));
     });
+
+    $("#theme-toggle").click(function(){
+        let currentTheme = $("html").attr("data-bs-theme");
+
+        if (currentTheme === "dark"){
+            
+        }
+    })
 });

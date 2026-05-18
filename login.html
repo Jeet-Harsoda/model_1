@@ -7,6 +7,7 @@
     <title>Log In | Hoster</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -31,11 +32,12 @@
                         <p class="text-muted">Welcome back! Please enter your details.</p>
                     </div>
 
-                    <form>
+                    <form class="needs-validation" novalidate>
                         <div class="mb-3">
                             <label for="email" class="form-label fw-semibold">Email address</label>
                             <input type="email" class="form-control form-control-lg" id="email"
                                 placeholder="name@example.com" required>
+                            <div class="invalid-feedback">Please enter an email.</div>
                         </div>
 
                         <div class="mb-4">
@@ -46,6 +48,7 @@
                             <div class="input-group">
                                 <input type="password" class="form-control form-control-lg border-end-0" id="password"
                                     placeholder="••••••••" required>
+                                <div class="invalid-feedback">Please enter password.</div>
                                 <span class="input-group-text bg-white bg-transparent text-muted cursor-pointer">
                                     <i class="far fa-eye"></i>
                                 </span>
@@ -57,8 +60,7 @@
                             <label class="form-check-label text-muted" for="remember">Remember me for 30 days</label>
                         </div>
 
-                        <button type="button" class="btn btn-primary btn-lg w-100 mb-4"
-                            onclick="window.location.href='profile.html'">Log in</button>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 mb-4">Log in</button>
 
                         <div class="position-relative mb-4">
                             <hr class="text-muted">
@@ -87,7 +89,20 @@
             </div>
         </div>
     </div>
-
+    <script>
+        $(document).ready(function(){
+            $("form").submit(function(event){
+            event.preventDefault();
+            
+            if (this.checkValidity() === false){
+                $(this).addClass("was-validated");
+            }
+            else{
+                window.location.href = "login.html";;
+            }
+            });
+        });
+    </script>
 </body>
 
 </html>
