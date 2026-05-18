@@ -117,8 +117,86 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card card shadow-sm h-100 extra-plan d-none">
+                        <h3 class="mb-3">Basic VPS Hosting</h3>
+                        <p class="text-muted">Ideal solution for beginners</p>
+
+                        <div class="price">
+                            $1.99<span>/mo</span>
+                        </div>
+                        <p class="text-muted small text-decoration-line-through mb-4">$9.99/mo</p>
+
+                        <a href="service-details.html" class="btn btn-outline-primary w-100 mb-4">Select Plan</a>
+                        <p class="text-muted small mb-4">$47.76 for the first year</p>
+
+                        <div class="text-start">
+                            <h5 class="fs-6 fw-bold mb-3">Top Features</h5>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> 1 Website</li>
+                                <li><i class="fas fa-check"></i> 50 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> Free Domain (No)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card popular shadow-lg h-100 extra-plan d-none">
+                        <div class="popular-badge">MOST POPULAR</div>
+                        <h3 class="mb-3">Premium VPS Hosting</h3>
+                        <p class="text-muted">Perfect package for personal websites</p>
+
+                        <div class="price text-primary">
+                            $2.99<span>/mo</span>
+                        </div>
+                        <p class="text-muted small text-decoration-line-through mb-4">$11.99/mo</p>
+
+                        <a href="service-details.html" class="btn btn-primary w-100 mb-4">Select Plan</a>
+                        <p class="text-muted small mb-4">$71.76 for the first year</p>
+
+                        <div class="text-start">
+                            <h5 class="fs-6 fw-bold mb-3">Top Features</h5>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> 100 Websites</li>
+                                <li><i class="fas fa-check"></i> 100 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> Free Domain ($9.99 value)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card card shadow-sm h-100 extra-plan d-none">
+                        <h3 class="mb-3">Business VPS Hosting</h3>
+                        <p class="text-muted">Optimized for small businesses</p>
+
+                        <div class="price">
+                            $3.99<span>/mo</span>
+                        </div>
+                        <p class="text-muted small text-decoration-line-through mb-4">$16.99/mo</p>
+
+                        <a href="service-details.html" class="btn btn-outline-primary w-100 mb-4">Select Plan</a>
+                        <p class="text-muted small mb-4">$95.76 for the first year</p>
+
+                        <div class="text-start">
+                            <h5 class="fs-6 fw-bold mb-3">Top Features</h5>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> 100 Websites</li>
+                                <li><i class="fas fa-check"></i> 200 GB NVMe Storage</li>
+                                <li><i class="fas fa-check"></i> ~100 000 Visits Monthly</li>
+                                <li><i class="fas fa-check"></i> Free Email</li>
+                                <li><i class="fas fa-check"></i> Free SSL</li>
+                                <li><i class="fas fa-check"></i> Free Domain ($9.99 value)</li>
+                                <li><i class="fas fa-check"></i> Daily Backups</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="text-center  mt-5"><button type="button" id="load-more-btn" class="btn btn-primary px-4 py-2">Load More</button></div>
     </section>
 
     <div id="footer-placeholder"></div>
@@ -126,6 +204,14 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#load-more-btn").click(function() {
+                $(".extra-plan").removeClass('d-none');
+                $(this).hide();
+            });
+        });
+    </script>
 </body>
 
 </html>
