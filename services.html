@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,8 @@
     <title>Web Hosting Services | Hoster</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -31,11 +32,18 @@
             </div>
         </div>
     </div>
+    <div class="text-center mb-5 my-5">
+        <div class="btn-group" role="group" aria-label="Service Category Filter">
+            <button type="button" class="btn btn-primary filter-btn" data-filter="all">All Services</button>
+            <button type="button" class="btn btn-outline-primary filter-btn" data-filter="hosting">Web Hosting</button>
+            <button type="button" class="btn btn-outline-primary filter-btn" data-filter="vps">VPS Hosting</button>
+        </div>
+    </div>
 
     <section class="section-padding">
         <div class="container">
             <div class="row g-4 align-items-center">
-                <div class="col-lg-4">
+                <div class="col-lg-4 pricing-item" data-category="hosting">
                     <div class="pricing-card card shadow-sm h-100">
                         <h3 class="mb-3">Single Web Hosting</h3>
                         <p class="text-muted">Ideal solution for beginners</p>
@@ -62,7 +70,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 pricing-item" data-category="hosting">
                     <div class="pricing-card popular shadow-lg h-100">
                         <div class="popular-badge">MOST POPULAR</div>
                         <h3 class="mb-3">Premium Web Hosting</h3>
@@ -90,7 +98,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 pricing-item" data-category="hosting">
                     <div class="pricing-card card shadow-sm h-100">
                         <h3 class="mb-3">Business Web Hosting</h3>
                         <p class="text-muted">Optimized for small businesses</p>
@@ -118,7 +126,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 pricing-item" data-category="vps">
                     <div class="pricing-card card shadow-sm h-100 extra-plan d-none">
                         <h3 class="mb-3">Basic VPS Hosting</h3>
                         <p class="text-muted">Ideal solution for beginners</p>
@@ -142,7 +150,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 pricing-item" data-category="vps">
                     <div class="pricing-card popular shadow-lg h-100 extra-plan d-none">
                         <div class="popular-badge">MOST POPULAR</div>
                         <h3 class="mb-3">Premium VPS Hosting</h3>
@@ -167,7 +175,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 pricing-item" data-category="vps">
                     <div class="pricing-card card shadow-sm h-100 extra-plan d-none">
                         <h3 class="mb-3">Business VPS Hosting</h3>
                         <p class="text-muted">Optimized for small businesses</p>
@@ -196,19 +204,44 @@
                 </div>
             </div>
         </div>
-        <div class="text-center  mt-5"><button type="button" id="load-more-btn" class="btn btn-primary px-4 py-2">Load More</button></div>
+        <div class="text-center mt-5">
+            <button type="button" id="load-more-btn" class="btn btn-primary px-4 py-2">Load
+                More</button>
+        </div>
     </section>
 
     <div id="footer-placeholder"></div>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        $(document).ready(function(){
-            $("#load-more-btn").click(function() {
+        $(document).ready(function () {
+            $("#load-more-btn").click(function () {
                 $(".extra-plan").removeClass('d-none');
                 $(this).hide();
+            });
+
+            $(".filter-btn").click(function () {
+                $(".filter-btn").removeClass("btn-primary").addClass("btn-outline-primary");
+                $(this).removeClass("btn-outline-primary").addClass("btn-primary");
+
+                let value = $(this).attr("data-filter");
+
+                if (value === "all") {
+                    $(".pricing-item").not(".extra-plan").fadeIn(300);
+                    if ($("#load-more-btn").is(":hidden")) {
+                        $(".extra-plan").fadeIn(300);
+                    } else {
+                        $(".extra-plan").fadeOut(300);
+                    }
+                } else {
+                    $("#load-more-btn").fadeOut(300);
+                    $(".pricing-item[data-category='" + value + "']").removeClass("d-none");
+                    $(".pricing-item").not('[data-category="' + value + '"]').fadeOut(300);
+                    $(".pricing-item").filter('[data-category="' + value + '"]').fadeIn(300);
+
+                }
             });
         });
     </script>

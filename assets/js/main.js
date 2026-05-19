@@ -25,21 +25,23 @@ $(document).ready(function () {
     // back to top button
     $("body").append(`<button type="button" class="btn btn-primary btn-lg rounded-circle d-flex justify-content-center align-items-center" id="btn-back-to-top">&#8679;</button>`
     );
-
+    
+    // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > scrollThreashold) {
             $('#btn-back-to-top').fadeIn();
+
         }
         else {
             $('#btn-back-to-top').fadeOut();
         }
     });
-
     $("body").on('click', '#btn-back-to-top', function (e) {
         e.preventDefault();
         $('html, body').animate({ scrollTop: 0 }, 500);
     });
 
+    // Search button
     $(document).on('click', '#searchDomainBtn', function (e) {
         e.preventDefault();
         const domain = $('#domainInput').val();
@@ -63,23 +65,23 @@ $(document).ready(function () {
     });
 
     // Cart plan selection
-    function updateOrderSummary(tier, duration) { 
+    function updateOrderSummary(tier, duration) {
         let plan = hostingPlans[tier][duration]
-        
+
         let planBaseFullPrice = plan.basePrice * duration;
         let priceMonth = plan.basePrice * (1 - plan.discount);
         let priceFull = priceMonth * duration;
-        let planSavedAmount = priceFull - planBaseFullPrice; 
+        let planSavedAmount = priceFull - planBaseFullPrice;
 
         $('#summary-base-price').text("$" + planBaseFullPrice.toFixed(2));
         $('#summary-discount').text("Discount: " + (plan.discount * 100) + "%");
         $('#summary-discount-amount').text("-$" + planSavedAmount.toFixed(2));
         $('#summary-total').text("$" + priceFull.toFixed(2));
     }
-
     updateOrderSummary('premium', 12);
 
-    $(".plan-selector").click(function() {
+
+    $(".plan-selector").click(function () {
         let activeStyle = "border-primary bg-primary bg-opacity-10"
         $(".plan-selector").removeClass(activeStyle);
         $(this).addClass(activeStyle);
@@ -87,23 +89,29 @@ $(document).ready(function () {
         let tier = $(this).data('tier');
         let duration = $(this).data('duration');
 
-        updateOrderSummary(tier, duration); 
+        updateOrderSummary(tier, duration);
     });
 
     // Cart item deletion
-    $(".delete-item").click(function(){
-        $(this).closest('.card').remove();        
+    $(".delete-item").click(function () {
+        $(this).closest('.card').remove();
         $('#summary-base-price').text("$" + (0).toFixed(2));
         $('#summary-discount').text("Discount: " + 0 + "%");
         $('#summary-discount-amount').text("-$" + (0).toFixed(2));
         $('#summary-total').text("$" + (0).toFixed(2));
     });
 
-    $("#theme-toggle").click(function(){
+    // Dark theme control
+    $(document).on("click", "#theme-toggle", function () {
         let currentTheme = $("html").attr("data-bs-theme");
+        console.log("Button clicked! Current theme is: " + currentTheme);
 
-        if (currentTheme === "dark"){
-            
+        if (currentTheme === "dark") {
+            $('html').attr("data-bs-theme", "light");
+            $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+        } else {
+            $("html").attr("data-bs-theme", "dark");
+            $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
         }
-    })
+    });
 });
