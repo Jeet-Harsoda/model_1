@@ -193,10 +193,6 @@
                             <ul class="features-list">
                                 <li><i class="fas fa-check"></i> 100 Websites</li>
                                 <li><i class="fas fa-check"></i> 200 GB NVMe Storage</li>
-                                <li><i class="fas fa-check"></i> ~100 000 Visits Monthly</li>
-                                <li><i class="fas fa-check"></i> Free Email</li>
-                                <li><i class="fas fa-check"></i> Free SSL</li>
-                                <li><i class="fas fa-check"></i> Free Domain ($9.99 value)</li>
                                 <li><i class="fas fa-check"></i> Daily Backups</li>
                             </ul>
                         </div>
@@ -227,7 +223,7 @@
                 $(this).removeClass("btn-outline-primary").addClass("btn-primary");
 
                 let value = $(this).attr("data-filter");
-
+                $(".extra-plan").removeClass("d-none");
                 if (value === "all") {
                     $(".pricing-item").not(".extra-plan").fadeIn(300);
                     if ($("#load-more-btn").is(":hidden")) {
