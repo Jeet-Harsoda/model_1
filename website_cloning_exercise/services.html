@@ -233,7 +233,6 @@
                     }
                 } else {
                     $("#load-more-btn").fadeOut(300);
-                    $(".pricing-item[data-category='" + value + "']").removeClass("d-none");
                     $(".pricing-item").not('[data-category="' + value + '"]').fadeOut(300);
                     $(".pricing-item").filter('[data-category="' + value + '"]').fadeIn(300);
 
