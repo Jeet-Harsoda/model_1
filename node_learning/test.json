@@ -1,0 +1,63 @@
+[
+  {
+    "id": 101,
+    "name": "Leanne Graham",
+    "username": "leanneg",
+    "email": "leanne@april.biz",
+    "isActive": true,
+    "role": "Admin",
+    "orders": [
+      { "orderId": "A-551", "amount": 150.50, "status": "delivered", "items": ["laptop stand", "hdmi cable"] },
+      { "orderId": "A-552", "amount": 45.00, "status": "pending", "items": ["mousepad"] }
+    ],
+    "loyaltyPoints": 250
+  },
+  {
+    "id": 102,
+    "name": "Ervin Howell",
+    "username": "erv_howell",
+    "email": "ervin@melissa.tv",
+    "isActive": false,
+    "role": "User",
+    "orders": [
+      { "orderId": "B-102", "amount": 89.99, "status": "delivered", "items": ["mechanical keyboard"] }
+    ],
+    "loyaltyPoints": 90
+  },
+  {
+    "id": 103,
+    "name": "Clementine Bauch",
+    "username": "clem_bauch",
+    "email": "clementine@cory.com",
+    "isActive": true,
+    "role": "User",
+    "orders": [],
+    "loyaltyPoints": 10
+  },
+  {
+    "id": 104,
+    "name": "Patricia Lebsack",
+    "username": "patty_l",
+    "email": "patricia@kory.org",
+    "isActive": true,
+    "role": "Editor",
+    "orders": [
+      { "orderId": "C-301", "amount": 12.50, "status": "cancelled", "items": ["sticky notes", "pens"] },
+      { "orderId": "C-302", "amount": 300.00, "status": "delivered", "items": ["ergonomic chair"] },
+      { "orderId": "C-303", "amount": 75.25, "status": "delivered", "items": ["desk mat", "usb hub"] }
+    ],
+    "loyaltyPoints": 520
+  },
+  {
+    "id": 105,
+    "name": "Chelsey Dietrich",
+    "username": "chelsey_d",
+    "email": "chelsey@demarco.info",
+    "isActive": false,
+    "role": "User",
+    "orders": [
+      { "orderId": "D-881", "amount": 120.00, "status": "pending", "items": ["wireless earbuds"] }
+    ],
+    "loyaltyPoints": 110
+  }
+]
