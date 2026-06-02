@@ -1,13 +1,17 @@
-let http = require('http');
-let fs = require('fs');
-let cors = require('cors')
-let express = require('express');
-let axios = require('axios');
+//const http = require('http');
+const fs = require('fs');
+const cors = require('cors')
+const express = require('express');
+const axios = require('axios');
 require('./db/config');
 require('./db/users')
-let user_model = require('./db/users');  
+const user_model = require('./db/users');  
+const { join } = require('path');
 const app = express();
 app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
+app.use(cors());
 
 function header(res) {
     res.write("<a href='/'>home</a>");
@@ -36,12 +40,14 @@ app.get("/", (req, res) => {
     });
 });
 
-app.post("./submit-register",async (req,res)=>{
-    const user = user_model(req.body);
+app.post("/submit-register",async (req,res)=>{
+    const user = new user_model(req.body);
     const result = await user.save();
-    res.send(result);
+    console.log(result);   
+    res.redirect('/login.html');
+    console.log("data submitted");
 });
-    
+
 app.listen(8008);
 
 // app.get("/about", (req, res) => {
