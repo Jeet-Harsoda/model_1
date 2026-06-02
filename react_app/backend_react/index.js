@@ -1,6 +1,11 @@
-let http = require("http");
+let http = require('http');
 let fs = require('fs');
+let cors = require('cors')
 let express = require('express');
+let axios = require('axios');
+require('./db/config');
+require('./db/users')
+let user_model = require('./db/users');  
 const app = express();
 app.use(express.static('public'));
 
@@ -31,7 +36,14 @@ app.get("/", (req, res) => {
     });
 });
 
+app.post("./submit-register",async (req,res)=>{
+    const user = user_model(req.body);
+    const result = await user.save();
+    res.send(result);
+});
+    
 app.listen(8008);
+
 // app.get("/about", (req, res) => {
 //     res.writeHead(200, {
 //         "content-type": "text/html"
