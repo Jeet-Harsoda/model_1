@@ -7,6 +7,7 @@ const connectDB = require('./db/config');
 const user_model = require('./db/users');  
 const { join } = require('path');
 const app = express();
+const path = require('path')
 
 app.use(express.static('public'));
 app.use(express.json());
