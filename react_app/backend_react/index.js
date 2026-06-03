@@ -53,6 +53,7 @@ app.listen(8008, ()=>{
     console.log("Server started.");
 });
 
+module.exports = app;
 // app.get("/about", (req, res) => {
 //     res.writeHead(200, {
 //         "content-type": "text/html"
