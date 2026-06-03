@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, 'public', 'index.html'));
     } catch (error) {
         console.error("Error serving index.html:", error.message);
-        res.status(404).send("File not found.");
+        res.status(404).send("Error 404: File not found.");
     }
 });
 
