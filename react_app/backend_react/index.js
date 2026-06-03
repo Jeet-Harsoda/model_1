@@ -1,17 +1,19 @@
-//const http = require('http');
 const fs = require('fs');
-const cors = require('cors')
+const cors = require('cors');
 const express = require('express');
 const axios = require('axios');
-require('./db/config');
-require('./db/users')
+const connectDB = require('./db/config'); 
+
 const user_model = require('./db/users');  
 const { join } = require('path');
 const app = express();
+
 app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
+connectDB();
 
 function header(res) {
     res.write("<a href='/'>home</a>");
@@ -19,36 +21,37 @@ function header(res) {
     res.write("<br/><a href='/services'>services</a>");
     res.write("<br/><a href='/gallery'>gallery</a>");
     res.write("<br/><a href='/products'>products</a>");
-    res.write("<br/>")
+    res.write("<br/>");
 }
 
 app.get("/", (req, res) => {
     fs.readFile('./index.html', (error, data) => {
-        console.log(data);
-        console.log(error);
         if (error) {
             res.writeHead(404);
             res.write("file not found.");
-        }
-        else {
-            res.writeHead(200, {
-
-            });
+        } else {
+            res.writeHead(200, {});
             res.write(data);
         }
-        res.end()
+        res.end();
     });
 });
 
-app.post("/submit-register",async (req,res)=>{
-    const user = new user_model(req.body);
-    const result = await user.save();
-    console.log(result);   
-    res.redirect('/login.html');
-    console.log("data submitted");
+app.post("/submit-register", async (req, res) => {
+    try {
+        const user = new user_model(req.body);
+        const result = await user.save();
+        console.log("Data successfully submitted to MongoDB:", result);   
+        res.redirect('/login.html');
+    } catch (error) {
+        console.error("Failed to save user:", error.message);
+        res.status(500).send("Error saving data to the database.");
+    }
 });
 
-app.listen(8008);
+app.listen(8008, ()=>{
+    console.log("Server started.");
+});
 
 // app.get("/about", (req, res) => {
 //     res.writeHead(200, {
