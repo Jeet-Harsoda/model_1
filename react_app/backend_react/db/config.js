@@ -9,7 +9,7 @@ let isConnected = false;
 
 const connectDB = async () => {
     if (isConnected) {
-        console.log("🔄 Reusing existing MongoDB connection");
+        console.log("Reusing existing MongoDB connection");
         return;
     }
 
@@ -22,9 +22,9 @@ const connectDB = async () => {
         
         // Mongoose connection states: 1 = connected
         isConnected = db.connections[0].readyState === 1;
-        console.log("🚀 Fresh connection to MongoDB Atlas established!");
+        console.log("Fresh connection to MongoDB Atlas established!");
     } catch (error) {
-        console.error("❌ Database connection failed:", error.message);
+        console.error("Database connection failed:", error.message);
         // In serverless, don't hard crash the process, let the function throw an error
         throw error; 
     }

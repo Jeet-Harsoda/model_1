@@ -25,16 +25,12 @@ function header(res) {
 }
 
 app.get("/", (req, res) => {
-    fs.readFile('./index.html', (error, data) => {
-        if (error) {
-            res.writeHead(404);
-            res.write("file not found.");
-        } else {
-            res.writeHead(200, {});
-            res.write(data);
-        }
-        res.end();
-    });
+    try {
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    } catch (error) {
+        console.error("Error serving index.html:", error.message);
+        res.status(404).send("File not found.");
+    }
 });
 
 app.post("/submit-register", async (req, res) => {
