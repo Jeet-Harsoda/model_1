@@ -12,7 +12,9 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+old*
 *.local
+.gitignore
 
 # Editor directories and files
 .vscode/*
