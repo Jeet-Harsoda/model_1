@@ -1,4 +1,3 @@
-const fs = require('fs');
 const cors = require('cors');
 const express = require('express');
 const axios = require('axios');
@@ -9,7 +8,7 @@ const { join } = require('path');
 const app = express();
 const path = require('path')
 
-const publicPath = path.join(__dirname, '../front_end/dist');
+const publicPath = join(__dirname, '..', 'front_end', 'dist');
 app.use(express.static(publicPath));
 
 app.use(express.json());
@@ -27,33 +26,30 @@ function header(res) {
     res.write("<br/>");
 }
 
-// Serve static assets from Vite build
-// The catch-all route must be at the very bottom (after API routes)
-// So we will put it at the end of the file. But we can keep a / route here if needed,
-// though express.static usually handles / if index.html exists in dist.
-// We will replace this old / route with the catch-all later.
-
 app.post("/submit-register", async (req, res) => {
     try {
         const user = new user_model(req.body);
         const result = await user.save();
         console.log("Data successfully submitted to MongoDB:", result);
-        res.redirect('/login.html');
+        res.redirect('/login.html'); 
     } catch (error) {
         console.error("Failed to save user:", error.message);
         res.status(500).send("Error saving data to the database.");
     }
 });
 
-app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(__dirname, '../front_end/dist', 'index.html'));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-app.listen(8008, () => {
-    console.log("Server started.");
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(8008, () => {
+        console.log("🚀 Local server started seamlessly on http://localhost:8008");
+    });
+}
 
 module.exports = app;
+
 // app.get("/about", (req, res) => {
 //     res.writeHead(200, {
 //         "content-type": "text/html"
